@@ -3,10 +3,15 @@ python:
   - "2.7"
 virtualenv:
   system_site_packages: true
+
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq python-distutils-extra
+
 install:
-  - apt-get install python-distutils-extra 
   - pip install -r securedrop/test-requirements.txt
   - pip install -r securedrop/source-requirements.txt
   - pip install -r securedrop/document-requirements.txt
+
 script:
   - ./setup_dev.sh -u
