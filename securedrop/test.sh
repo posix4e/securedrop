@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 if [ $(which vagrant) ] ; then
     echo ""
@@ -6,9 +7,10 @@ if [ $(which vagrant) ] ; then
     echo ""
 fi
 
-export PYTHONPATH=./tests
 
 # -f makes unittest fail fast, so we can use && to avoid burying test failures
-python -m unittest -fv tests.unit_tests && python -m unittest -fv tests.functional.submit_and_retrieve_message && python -m unittest -fv tests.functional.submit_and_retrieve_file
 
-
+PYTHON="env PYTHONPATH=`pwd`/tests:$PYTHONPATH python"
+${PYTHON} -m unittest -fv unit_tests
+${PYTHON} -m unittest -fv functional.submit_and_retrieve_message 
+${PYTHON} -m unittest -fv functional.submit_and_retrieve_file
