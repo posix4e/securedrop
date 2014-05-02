@@ -3,7 +3,7 @@
 # stop setup script if any command fails
 set -e
 # uncomment to print debugging information
-#set -x
+set -x
 
 usage() {
   cat <<EOS

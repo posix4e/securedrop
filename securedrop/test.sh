@@ -7,6 +7,6 @@ if [ $(which vagrant) ] ; then
     echo ""
 fi
 
-strace -fi python -m unittest -fv tests.unit_tests
+python -m unittest -fv tests.unit_tests
 python -m unittest -fv tests.functional.submit_and_retrieve_message 
 python -m unittest -fv tests.functional.submit_and_retrieve_file
