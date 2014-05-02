@@ -8,6 +8,7 @@ virtualenv:
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq python-distutils-extra
+ - sudo apt-get install -qq strace
 
 install:
   - pip install -r securedrop/test-requirements.txt
