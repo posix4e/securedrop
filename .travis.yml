@@ -2,4 +2,7 @@ language: python
 python:
   - "2.7"
 script:
+  - pip install -r securedrop/source-requirements.txt
+  - pip install -r securedrop/document-requirements.txt
+  - pip install -r securedrop/test-requirements.txt
   - ./setup_dev.sh -u

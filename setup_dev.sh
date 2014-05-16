@@ -69,7 +69,6 @@ echo "Installing dependencies: "$DEPENDENCIES
 sudo apt-get update
 sudo apt-get -y install $DEPENDENCIES
 
-sudo pip install --upgrade distribute
 sudo pip install -r source-requirements.txt
 sudo pip install -r document-requirements.txt
 sudo pip install -r test-requirements.txt
