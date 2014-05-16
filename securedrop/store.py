@@ -11,7 +11,6 @@ from cStringIO import StringIO
 from shutil import copyfileobj
 
 from MAT import mat
-from MAT import strippers
 
 import logging
 log = logging.getLogger(__name__)
